@@ -12,6 +12,12 @@
        <div class="box">Content2</div>
        <p>pargraph1</p>
        <p>pargraph2</p>
+       <form action="">
+            <input type="text" placeholder="Enter Text">
+            <input type="password" placeholder="Enter Password">
+            <input type="text" name="username">
+            <input type="email" name="email">
+       </form>
        <script src="/1.setup/js/jquery-3.7.1.js"></script>
        <script>
           //ID Selector
@@ -22,6 +28,14 @@
 
           //Element Selector
            $('p').hide();
+
+           //Attribute Selector
+           $('[placeholder]').css('border','2px solid');
+
+           //Value Selector
+           $('[name="username"]').val('Default Username')
+
+           //Partial value Selector
        </script>
     </body>
 </html>
