@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dom Manipulation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="content">Old HTML</div>
+        <img id="logo" src="logo.png" alt="logo"/>
+        <script src="/1.setup/js/jquery-3.7.1.js"></script>
+       <script>
+        //html()
+         //$('#content').html('<p>New HTML Content</p>');
+        //text()
+        $('#content').text('New Text Content');
+        //attr()
+        $('#logo').attr('src','new-logo.png');
+        $('#logo').attr('alt','NEW-LOGO');
+       </script>
+    </body>
+</html>

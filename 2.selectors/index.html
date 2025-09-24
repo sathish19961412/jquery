@@ -18,6 +18,19 @@
             <input type="text" name="username">
             <input type="email" name="email">
        </form>
+       <a href="http://example.com">Example</a>
+       <a href="http://example.org">Example Org</a>
+       <a href="https://google.com">Example google</a>
+       <div class="container">
+         <p>Paragraph1</p>
+         <p>Paragraph2</p>
+       </div>
+       <div class="parent">
+         <p>Direct Child</p>
+         <div>
+            <p>Not a Direct Child</p>
+         </div>
+       </div>
        <script src="/1.setup/js/jquery-3.7.1.js"></script>
        <script>
           //ID Selector
@@ -27,7 +40,7 @@
           $('.box').css('background-color','yellow');
 
           //Element Selector
-           $('p').hide();
+           //$('p').hide();
 
            //Attribute Selector
            $('[placeholder]').css('border','2px solid');
@@ -36,6 +49,14 @@
            $('[name="username"]').val('Default Username')
 
            //Partial value Selector
+           $('a[href*="example"]').css('color','red')
+           $('a[href^="https://google"]').css('color','green')
+
+           //Descendant Selector
+           $('.container p').css('color','blue')
+
+           //Child Selector
+           $('.parent > p').css('font-weight','bold')
        </script>
     </body>
 </html>
