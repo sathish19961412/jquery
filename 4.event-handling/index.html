@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dom Manipulation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+       <button id="myBtn">Click Me</button>
+       <div id="hoverDiv" style="width:100px;height:100px;background-color: gray;"></div>
+       <input type="text" id="inputField" placeholder="Focus on me"/>
+       <div id="parent">
+            <button class="child"> Child Button</button>
+       </div>
+       <script src="/1.setup/js/jquery-3.7.1.js"></script>
+       <script>
+        //click
+        $(document).ready(function(){
+            $('#myBtn').click(function(){
+             alert('Button Clicked');
+          })
+        })
+
+        //hover
+        $(document).ready(function(){
+            $('#hoverDiv').hover(function(){
+            $(this).css('background-color','red')
+          },function(){
+            $(this).css('background-color','gray')
+          })
+        })
+
+        //Focus
+        $(document).ready(function(){
+          $('#inputField').focus(function(){
+            $(this).css('border','2px solid green')
+          })
+        })
+        //blur()
+        $(document).ready(function(){
+          $('#inputField').blur(function(){
+            $(this).css('border','2px solid red')
+          })
+        })
+
+        //On Off
+        //on()
+        $(document).ready(function(){
+          $('#parent').on('click','.child',function(){
+             alert('Child Button Clicked')
+          })
+        })
+        //off()
+        
+          $('#myBtn').on('click',showAlert)
+          function showAlert() {
+             alert('Button Clicked')
+             $('#myBtn').off('click',showAlert)
+          }
+       
+       </script>
+    </body>
+</html>
